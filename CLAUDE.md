@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## aProject Overview
 
 Leeson-ssh is a cross-platform SSH client built with Electron, TypeScript, React, and xterm.js. It provides multi-tab terminal management, bookmark organization, a command notebook, and custom shortcuts.
 
@@ -58,23 +58,24 @@ npm run dist:mac     # macOS DMG (universal)
 
 ### Key Source Files
 
-| File | Purpose |
-|------|---------|
-| `src/main/index.ts` | App entry, BrowserWindow creation, lifecycle |
-| `src/main/ssh-manager.ts` | SSH connections via ssh2, reconnect logic |
-| `src/main/config-store.ts` | electron-store wrapper for bookmarks/shortcuts/settings |
-| `src/main/ipc-handlers.ts` | IPC handler registration |
-| `src/preload/index.ts` | API exposed to renderer via contextBridge |
-| `src/shared/types.ts` | Shared TypeScript interfaces, IPC_CHANNELS constants |
-| `src/renderer/App.tsx` | Root React component with layout |
-| `src/renderer/components/Terminal.tsx` | xterm.js integration with FitAddon |
-| `src/renderer/components/CommandBook.tsx` | Command notebook with auto-save |
-| `src/renderer/components/Sidebar.tsx` | Bookmark tree with groups |
-| `src/renderer/components/TabBar.tsx` | Multi-tab management |
+| File                                      | Purpose                                                 |
+| ----------------------------------------- | ------------------------------------------------------- |
+| `src/main/index.ts`                       | App entry, BrowserWindow creation, lifecycle            |
+| `src/main/ssh-manager.ts`                 | SSH connections via ssh2, reconnect logic               |
+| `src/main/config-store.ts`                | electron-store wrapper for bookmarks/shortcuts/settings |
+| `src/main/ipc-handlers.ts`                | IPC handler registration                                |
+| `src/preload/index.ts`                    | API exposed to renderer via contextBridge               |
+| `src/shared/types.ts`                     | Shared TypeScript interfaces, IPC\_CHANNELS constants   |
+| `src/renderer/App.tsx`                    | Root React component with layout                        |
+| `src/renderer/components/Terminal.tsx`    | xterm.js integration with FitAddon                      |
+| `src/renderer/components/CommandBook.tsx` | Command notebook with auto-save                         |
+| `src/renderer/components/Sidebar.tsx`     | Bookmark tree with groups                               |
+| `src/renderer/components/TabBar.tsx`      | Multi-tab management                                    |
 
-### IPC Channels (IPC_CHANNELS)
+### IPC Channels (IPC\_CHANNELS)
 
 Located in `src/shared/types.ts`. Channels include:
+
 - `SSH_*`: connect, disconnect, send, resize, output, status, closed
 - `CONFIG_*`: get, set
 - `DIALOG_*`: openFile, saveFile, selectDir
